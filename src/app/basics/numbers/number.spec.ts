@@ -10,4 +10,13 @@ describe('Pruebas de numeros', () => {
     expect(resp).toBe(number + 1);
 
   });
+
+  it('Debe de retornar 100 si recibe un numero mayor a 100', () => {
+    const number = 101;
+    const resp = increment(number);
+
+    expect(resp).toBe(100)
+
+  });
+
 })

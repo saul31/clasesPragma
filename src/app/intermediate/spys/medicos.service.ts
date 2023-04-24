@@ -13,6 +13,7 @@ export class MedicosService {
   }
 
   agregarMedico(medico: any) {
+    console.log('sssss')
     return this.http.post('...', medico)
       .pipe(map((resp: any) => resp['medico']));
   }

@@ -24,12 +24,14 @@ export class MedicosComponent implements OnInit {
 
   agregarMedico() {
     const medico = { nombre: 'Médico Juan Carlos' };
-
-    this._medicoService.agregarMedico(medico)
-      .subscribe(
-        medicoDB => this.medicos.push(medicoDB),
-        err => this.mensajeError = err
-      );
+    this._medicoService.agregarMedico(medico).subscribe({
+      next: (medicoDB: any) => {
+        this.medicos.push(medicoDB)
+      },
+      error: (err) => {
+        this.mensajeError = err;
+      }
+    });
   }
 
   borrarMedico(id: string) {

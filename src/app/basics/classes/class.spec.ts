@@ -15,6 +15,7 @@ describe('Pruebas de clases', () => {
   afterEach(() => {
 
   });
+  player.hp = 100;
 
   it('Debe de retornar 80 de hp si recibe 20 de daño', () => {
     const resp = player.pushDamage(20);
